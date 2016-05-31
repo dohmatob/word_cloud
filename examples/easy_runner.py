@@ -21,11 +21,11 @@ with open(in_filename) as fp:
 # lower max_font_size
 import matplotlib.pyplot as plt
 stopwords = STOPWORDS.copy()
-map(stopwords.add, ["langle", "rangle", "begin", "equation", "eqnarray",
-                    "split", "$", "mathbb", "mathcal", "underset", "text",
-                    "right", "left", "case", "_1", "_2", "np", "end",
-                    "cases", "mbox", "ldots", "mathrm"])
-wordcloud = WordCloud(max_font_size=40, relative_scaling=.5, max_words=1000,
+map(stopwords.add, ["Subject", "Area", "Subject", "Entered",
+                    "Abstract", "paper", "available", "primary", "author",
+                    "show", "id", "bid", "title", "authors", "using",
+                    "one", "two"])
+wordcloud = WordCloud(max_font_size=40, relative_scaling=.8, max_words=200,
                       stopwords=stopwords, random_state=0).generate(text)
 plt.figure()
 plt.imshow(wordcloud, aspect="auto")
